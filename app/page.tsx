@@ -1,4 +1,10 @@
-export default function Home() {
+import { createClient } from "@/utils/supabase/server";
+
+export default async function Home() {
+  const supabase = createClient();
+
+  const { data } = await supabase.auth.getUser()
+
   return (
     <>
     <div className="text-xl mb-4">Recently added</div>
@@ -19,7 +25,8 @@ export default function Home() {
           <a href="/by-popularity">Browse by popularity</a>
         </div>
         <div className="flex justify-center items-center h-20 w-[calc(50%-1px)] border-l">
-          <a href="/login">Login</a>
+          {!data?.user && <a href="/auth/login">Login</a>}
+          {data?.user && <a href="/auth/logout">Welcome {data.user.email}, Logout</a>}
         </div>
       </div>
     </>

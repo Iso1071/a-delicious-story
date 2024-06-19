@@ -23,9 +23,11 @@ export default async function Page() {
 
     <ul>
       {categories.map(row => (
-        <li key={row.id} className="flex items-center border p-2 my-2">
-          <div className="inline-block size-16 bg-sky-300 mr-2"></div>
-          {row.name}
+        <li key={row.id} className="my-2">
+          <a href={'/category/' + row.id} className="flex items-center border p-2">
+            <div className="inline-block size-16 bg-sky-300 mr-2"></div>
+            {row.name}
+          </a>
         </li>
       ))}
     </ul>

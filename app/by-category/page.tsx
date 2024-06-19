@@ -22,10 +22,15 @@ export default async function Page() {
     <div className="text-xl mb-4">Browse by Category</div>
 
     <ul>
-      {categories.map(row => (
-        <li key={row.id} className="my-2">
-          <a href={'/category/' + row.id} className="flex items-center border p-2">
-            <div className="inline-block size-16 bg-sky-300 mr-2"></div>
+      {categories.map((row) => (
+        <li key={row.id} 
+          className={`my-2 bg-center bg-no-repeat`}
+          style={{
+            backgroundImage: "url('/img/placeholder-" + (row.id%4||4) + ".jpg')"
+          }}>
+          <a href={'/category/' + row.id} 
+            className="flex items-center border p-16 text-4xl font-black
+                       text-gray-800">
             {row.name}
           </a>
         </li>

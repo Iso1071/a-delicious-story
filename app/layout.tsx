@@ -8,7 +8,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="p-8 pt-10" >
-        <a className="text-2xl" href="/">
+        <a className="text-2xl underline underline-offset-8 mb-8 block" href="/">
           <div>A Delicious Story</div>
         </a>
         <main>

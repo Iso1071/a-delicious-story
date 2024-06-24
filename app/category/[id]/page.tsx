@@ -39,17 +39,12 @@ export default async function Page({params}: {params:{id:number}}) {
     redirect('/by-category');
   }
 
-  const raw_recepts = await getRecepts(supabase, params.id);
-
-  // temp code: verwijder nadat er voldoende data is 
-  const recepts = new Array(20).fill(raw_recepts).flat()
-      .map((i, index) => ({...i, id: i.id + index}));
-
+  const recepts = await getRecepts(supabase, params.id);
 
   return (<>
     <a href="/by-category" className="block text-xl mb-4">&lt; back</a>
 
-    <div className="mb-16 bg-center bg-no-repeat" style={{
+    <div className="mb-16 bg-center bg-no-repeat bg-cover" style={{
          backgroundImage: "url('/img/placeholder-" + (params.id%4||4) + ".jpg')"
     }}>
       <div className="flex items-center border p-16 text-4xl font-black

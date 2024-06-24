@@ -24,7 +24,7 @@ export default async function Page() {
     <ul>
       {categories.map((row) => (
         <li key={row.id} 
-          className={`my-2 bg-center bg-no-repeat bg-cover`}
+          className="my-2 bg-center bg-no-repeat bg-cover"
           style={{
             backgroundImage: "url('/img/placeholder-" + (row.id%4||4) + ".jpg')"
           }}>

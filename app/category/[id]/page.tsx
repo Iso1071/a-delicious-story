@@ -55,14 +55,16 @@ export default async function Page({params}: {params:{id:number}}) {
 
     <div className="grid grid-cols-3 gap-4">
       {recepts.map(row => (
-        <div key={row.id} className="flex items-center justify-center flex-col">
+        <a 
+          href={'/recept/' + row.id}
+          key={row.id} className="flex items-center justify-center flex-col">
           <Image 
             src={'/img/placeholder-' + (row.id%4||4) + '.jpg'} 
             alt={row.name}
             width={200}
             height={200}/>
-          {row.name} ({row.id})
-        </div>
+          {row.name}
+        </a>
       ))}
     </div>
   </>);

@@ -9,9 +9,14 @@ export default async function Home() {
     <>
     <div className="text-xl mb-4">Recently added</div>
       <div className="flex items-start justify-center mb-8">
-        <div className="flex items-center justify-center w-full max-w-2xl border aspect-square">
-          Hello is it me you're looking for
-        </div>
+        <a
+          href="/recept/1"
+          className="flex items-center justify-center w-full max-w-2xl border aspect-square"
+          style={{
+            backgroundImage: "url('/img/placeholder-" + (Date.now()%4||4) + ".jpg')"
+          }}
+        >
+        </a>
       </div>
 
       <div className="flex flex-wrap justify-center items-center">
